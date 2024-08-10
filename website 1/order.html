@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Order Now</title>
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #EFF1F5;
+            padding: 20px;
+        }
+
+        .order-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.image-container img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-list button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product-list button:hover {
+    background-color: #ddd;
+}
+
+.price-section {
+    max-width: 300px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.price-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.price-section p {
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #555;
+}
+
+.price-section h3 {
+    margin: 30px;
+    margin-left: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.price-section .highlight {
+    color: rgb(122, 126, 130);
+}
+
+.price-section input[type="number"] {
+    width: 60px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.button {
+    border: 2px solid black;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: black;
+}
+
+.button h3 {
+    margin: 0;
+    color: black;
+}
+
+.button:hover h3 {
+    color: white;
+}
+
+.search-bar1 {
+    max-width: 200px;
+}
+
+.search-bar1 h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.search-bar1 input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-bar1 ul {
+    list-style: none;
+    padding: 0;
+}
+
+.search-bar1 ul li {
+    margin: 40px;
+    margin-top: 0px;
+    margin-left: 0px;
+    color: #888a8c;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.search-bar1 ul li:hover {
+    color: black;
+}
+
+/* Media Queries */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+    .order-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container img {
+        width: 80%;
+    }
+
+    .product-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .price-section {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .search-bar1 {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .order-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .product-list {
+        gap: 10px;
+    }
+
+    .product-list button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .price-section h1, .price-section h2, .price-section h3 {
+        font-size: 18px;
+    }
+
+    .button {
+        width: 120px;
+        height: 35px;
+    }
+
+    .button h3 {
+        font-size: 16px;
+    }
+
+    .search-bar1 h1 {
+        font-size: 20px;
+    }
+
+    .search-bar1 input {
+        height: 35px;
+    }
+
+    .search-bar1 ul li {
+        margin: 20px 0;
+    }
+}
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo" />
+            </div>
+            <a href="javascript:void(0);" class="toggle-button" onclick="toggleMenu()">
+                ☰
+            </a>
+            <ul class="nav-links" id="navbarLinks">
+              
+                <li><a href="#Home">Home</a></li>
+                <li><a href="page.html">Pages</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="search" placeholder="Search" />
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="login">
+                <a href="login.html"><img src="images/user.png" alt="User Logo" /></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Home">
+            <div class="slideshow-container" style="background-color:rebeccapurple">
+                <div class="slides">
+                    <div class="slide" style=" background-color:#EFF1F5">
+                        <div class="text">
+                            <h2>45% MEGA SALE OFFER</h2>
+                            <h1>Order Now</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit quam
+                                <br />
+                                <br />
+                                scelerisque a tincidunt urna. Nisl, quam orci malesuada
+                            </p>
+                            <button class="cssbuttons-io-button">
+                                Get started
+                                <div class="icon">
+                                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                        <path
+                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="image">
+                            <img src="images/banner4.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="slide" style=" background-color:#EFF1F5">
+                        <div class="text">
+                            <h2>45% MEGA SALE OFFER</h2>
+                            <h1>Order Now</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit quam
+                                <br />
+                                <br />
+                                scelerisque a tincidunt urna. Nisl, quam orci malesuada
+                            </p>
+                            <button class="cssbuttons-io-button">
+                                Get started
+                                <div class="icon">
+                                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                        <path
+                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="image">
+                            <img src="images/banner4.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="slide" style=" background-color:#EFF1F5">
+                        <div class="text">
+                            <h2>45% MEGA SALE OFFER</h2>
+                            <h1>Order Now</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit quam
+                                <br />
+                                <br />
+                                scelerisque a tincidunt urna. Nisl, quam orci malesuada
+                            </p>
+                            <button class="cssbuttons-io-button">
+                                Get started
+                                <div class="icon">
+                                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0h24v24H0z" fill="none"></path>
+                                        <path
+                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="image">
+                            <img src="images/banner4.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br>
+
+        </div>
+        <div class="order-container">
+            <div class="image-container">
+                <img id="product-image" src="images/product-chair-1.jpg" alt="Product Image">
+            </div>
+            <div class="product-list">
+                <button onclick="changeImage('images/product-chair-1.jpg')">Chair</button>
+                <button onclick="changeImage('images/product-bed-1.jpg')">Bed</button>
+                <button onclick="changeImage('images/product-chair-4.jpg')">Sofa</button>
+               
+                <button onclick="changeImage('images/product-table-1.jpg')">Table</button>
+                <button onclick="changeImage('images/product-drawer-2.jpg')">Side Drawer</button>
+               
+                <button onclick="changeImage('images/product-drawer-1.jpg')">Drawer</button>
+            </div>
+            <div class="price-section">
+                <h1>Accent Leisure Chairs</h1>
+                <h2>$ 65.35 USD</h2>
+                <p>
+                    Furniture best dolor sit amet, consectetur adipiscing Ornare vitae cursus pharetra purus. 
+                    Ut enim sed id amet bibendum amet, Sed morbi site
+                </p>
+                <h3>Delivery: <span class="highlight">Free delivery (over $50)</span></h3>
+                <h3>Stock: <span class="highlight">12</span></h3>
+                <h3>Quantity: <input type="number" value="1" min="1"></h3>
+                <div class="button">
+                    <h3>Add to cart</h3>
+                </div>
+            </div>
+            <div class="search-bar1">
+                <h1>Search</h1>
+                <input type="text" id="search" placeholder="Keywords Here">
+                <ul>
+                    <li>Chair</li>
+                    <li>Bed</li>
+                    <li>Sofa</li>
+                    <li>Table</li>
+                    <li>Side Drawer</li>
+                    <li>Dining Chair</li>
+                </ul>
+            </div>
+        </div>
+        
+        <br><br><br><br><br>
+        <footer class="footer1">
+
+            <div class="footer-1">
+                <img src="images/logo.png" alt="">
+                <p>504, marul village, House <br>AT POST MARUL</p>
+                <h3>+917620807334</h3>
+                <p>www.sayed01.com</p>
+            </div>
+
+            <div class="footer-2">
+                <h1>Company</h1>
+                <ul>
+                    <a href="index.html"> <li>Home</li></a>
+                    <li>about us</li>
+                    <li>Our Blog Post</li>
+                  <a href="contact.html">  <li>Contact</li></a>
+                  <a href="login.html">  <li>login</li></a>
+                    <li>Resister</li>
+                    <li>shop</li>
+
+                </ul>
+            </div>
+            <div class="footer-3">
+                <h1>Information</h1>
+                <ul>
+                    <li>Terms & Conditions</li>
+                    <li>Style Guide</li>
+                    <li>Changelog</li>
+                    <li>Licenses</li>
+                </ul>
+            </div>
+            <div class="footer-3">
+                <h1>Newsletter</h1>
+                <ul>
+                    <li>Subscribe our Newsletter and <br>get all latest information and <br>offers</li>
+
+                </ul>
+                <input type="text" placeholder="Email Here">
+                <button><i class="fa-solid fa-arrow-right"></i></button>
+                <br><br><br>
+                <h1>Follow us______</h1>
+                <br>
+                <a href="https://www.facebook.com/sayedshaad"><i class="fa-brands fa-facebook fa-xl"></i></a>
+                <a href="https://www.github.com/sayedshaad01@gmail.om"> <i class="fa-brands fa-github fa-xl"></i></a>
+                <a href="https://www.instagram.com/mr.sayed.01"> <i class="fa-brands fa-instagram fa-xl"></i></a>
+                <a href="https://www.fa-whatsapp.com/7620807334"> <i class="fa-brands fa-whatsapp fa-xl"></i></a>
+            </div>
+        </footer>
+        <div class="copy-right">
+            <h1>All copy-right <i class="fa-regular fa-copyright"></i> devloped by sayedshad01 @2024</h1>
+            <div class="payment">
+                <img src="images/payment-img3.png" alt="">
+
+
+            </div>
+        </div>
+
+</body>
+<script>let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const slidesContainer = document.querySelector('.slides');
+
+    function showSlides() {
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        const slideWidth = slides[0].clientWidth;
+        slidesContainer.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+        setTimeout(showSlides, 4000); // 
+    }
+
+    showSlides();
+
+
+
+    function toggleMenu() {
+        const navbarLinks = document.getElementById('navbarLinks');
+        if (navbarLinks.style.display === 'flex') {
+            navbarLinks.style.display = 'none';
+        } else {
+            navbarLinks.style.display = 'flex';
+        }
+    }
+    function changeImage(imageSrc) {
+    var img = document.getElementById('product-image');
+    img.src = imageSrc;
+    img.onerror = function() {
+        console.log('Error loading image:', imageSrc);
+        img.src = 'images/placeholder.jpg'; 
+    };
+}
+
+document.querySelector('.button').addEventListener('click', function() {
+        alert('Order Successfully');
+    });
+
+</script>
+
+</html>
